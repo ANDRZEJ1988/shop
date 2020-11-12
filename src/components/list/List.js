@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {getListAction, getRequestListAction, setGoodsAction, setListAction} from "../../actions/actions";
 import './List.scss';
 import {goodsSelector, listSelector, requestListSelector} from "../../store/selectors";
+import Shop from '../../icons/shopping-cart.png';
 
 export const List = () => {
     const dispatch = useDispatch();
@@ -87,16 +88,11 @@ export const List = () => {
                                      alt="product"/>
                             </div>
                             <div className='forbtn'>
-                                <button className='button' onClick={() => putInBasket(value)}>Basket</button>
+                                <img src={Shop} alt="basket" onClick={() => putInBasket(value)}/>
                             </div>
-                            {/*<button onClick={() => pin(value)}>Pin</button>*/}
-                            {/*<button className='button' onClick={() => putInBasket(value)}>Basket</button>*/}
                             <div className="name">
                                 <h4>{value.title}</h4>
                                 <div className="info">Price - {value.price} {value.currency}</div>
-                                {/*<ul className="info">*/}
-                                {/*    <li>Price - {value.price} {value.currency}</li>*/}
-                                {/*</ul>*/}
                                 <div className='description'>{value.description}</div>
                             </div>
 

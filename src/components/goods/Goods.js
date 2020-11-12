@@ -16,7 +16,6 @@ export const Goods = () => {
     }, [dispatch, copyGoods]);
     const pin = useCallback((product) => {
         const anotherGoods = copyGoods.filter(value => {
-            // value.isPin = true;
             return value.id !== product.id
         });
         product.pin = true;
