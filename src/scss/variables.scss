@@ -1,0 +1,31 @@
+$fullPx: 100px;
+$fullPers: 100%;
+$flex: flex;
+$wrap: wrap;
+$center: center;
+$none: none;
+$space-around: space-around;
+$box-shadow: 5px 5px 55px -14px black;
+$border: 1px solid;
+$margin: 0 5px;
+
+%font-family {
+  font-family: 'Open Sans', sans-serif;
+  color: darken(#e7e7e7, 40%);
+}
+
+;
+@mixin size($arg1,$arg2) {
+  width: $arg1;
+  height: $arg2;
+}
+
+;
+@mixin flex($arg1, $arg2, $arg3, $arg4) {
+  display: $arg1;
+  flex-wrap: $arg2;
+  justify-content: $arg3;
+  width: $arg4;
+}
+
+;

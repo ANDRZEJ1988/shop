@@ -6,4 +6,4 @@ export const goodsSelector=state=>state.goods;
 export const isPinSelector=state=>state.isPin;
 export const sumSelector=createSelector(
     goodsSelector,
-    (goods)=>goods.reduce((previousValue, currentValue) => {return previousValue+currentValue.price*currentValue.amount},0));
+    (goods)=>goods.reduce((previousValue, currentValue) => {return previousValue+(currentValue.price*currentValue.amount)},0));

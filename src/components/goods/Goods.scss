@@ -1,27 +1,24 @@
-.goods{
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  margin: 15px;
-  .myGoods{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    .title{
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      margin: 5px;
-      .btn{
-        margin: 0 5px;
+@import "src/scss/variables";
+
+.goods {
+  @include flex($flex, $wrap, null, $fullPers);
+  margin: $fullPx*0.15;
+
+  .myGoods {
+    @include flex($flex, $wrap, $center, $fullPers);
+
+    .title {
+      @include flex($flex, null, $center, $fullPers);
+      margin: $fullPx*0.05;
+
+      .btn {
+        margin: $margin;
       }
     }
   }
-  .sum{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    font-size: 26px;
+
+  .sum {
+    @include flex($flex, null, $center, $fullPers);
+    font-size: $fullPx*0.26;
   }
 }

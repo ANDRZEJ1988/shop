@@ -38,7 +38,7 @@ export const Goods = () => {
             goods.map((value, index) => {
                 return (
                     <div key={index + 100} className='title'>
-                        {value.title} - {value.price * value.amount}{value.currency} - amount - {value.amount} items
+                        {value.title} - {(value.price * value.amount).toFixed(2)}{value.currency} - amount - {value.amount} items
                         {!value.pin && <button className='btn' onClick={() => remove(value.id)}>remove</button>}
                         {!isPin && <button className='btn' onClick={() => pin(value)}>pin</button>}
                         {value.pin && <button className='btn' onClick={() => unpin(value.id)}>unpin</button>}
@@ -52,7 +52,7 @@ export const Goods = () => {
             <div className='myGoods'>
                 {goods.length !== 0 ? render() : "There aren't any selected products"}
             </div>
-            <div className='sum'>{goods.length !== 0 ? `Total sum - ${sum}$` : ''}</div>
+            <div className='sum'>{goods.length !== 0 ? `Total sum - ${sum.toFixed(2)}$` : ''}</div>
         </div>
     );
 }

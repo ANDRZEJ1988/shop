@@ -1,292 +1,90 @@
-@media screen and (min-width: 992px) {
+@import "src/scss/variables";
 
-  .main {
-    width: 100%;
-    margin-top: 15px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.main {
+  margin-top: $fullPx*0.15;
+  @include flex($flex, $wrap, $center, $fullPers);
 
-    .inp {
-      width: 90%;
-      height: 70px;
-      display: flex;
-      align-items: center;
-      margin-bottom: 20px;
+  .inp {
+    @include size($fullPers*0.9, $fullPx*0.7);
+    margin-bottom: $fullPx*0.2;
+    display: $flex;
+    align-items: $center;
 
-      .searchProduct {
-        width: 100%;
-        height: 25px;
-        border-radius: 50px;
-        outline: none;
-      }
+    .searchProduct {
+      @include size($fullPers, $fullPx*0.25);
+      border-radius: $fullPx*0.5;
+      outline: $none;
+      padding-left: $fullPx*0.15;
+    }
+  }
+
+  .list {
+    @include flex($flex, $wrap, $space-around, $fullPers);
+  }
+
+  .card {
+    box-shadow: $box-shadow;
+    border-radius: $fullPx*0.04;
+    padding: $fullPx*0.15;
+    margin: $fullPx*0.15;
+    border: $border;
+    @include flex($flex, $wrap, $center, null);
+
+    .forimg, .forbtn {
+      @include flex($flex, null, $center, $fullPers);
     }
 
-    .list {
-      display: flex;
-      flex-wrap: wrap;
-      width: 100%;
-      justify-content: space-around;
+    .img {
+      min-width: $fullPx*0.5;
+      border-radius: $fullPx*0.15;
+      margin-bottom: $fullPx*0.15;
     }
 
-    .card {
-      width: 25%;
-      box-shadow: 5px 5px 55px -14px black;
-      border-radius: 4px;
-      padding: 15px;
-      margin: 15px;
-      border: 1px solid;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+    .name {
+      margin-top: $fullPx*0.15;
+      padding: $fullPx*0.05;
+      border: $border;
+      border-radius: $fullPx*0.05;
+      @include flex($flex, $wrap, $center, $fullPers);
 
-      .forimg, .forbtn {
-        width: 100%;
-        display: flex;
-        justify-content: center;
+      h4 {
+        margin: $fullPx*0.05;
       }
 
-      .img {
-        min-width: 50px;
-        border-radius: 15px;
-        margin-bottom: 15px;
+      .info {
+        @include flex($flex, null, $center, $fullPers);
+        @extend %font-family;
 
-      }
-
-      .button {
-        width: 70px;
-        height: 22px;
-      }
-
-      .name {
-        margin-top: 15px;
-        padding: 5px;
-        border: 1px solid;
-        border-radius: 5px;
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-
-        h4 {
-          margin: 5px;
-        }
-
-        .info {
+        .description {
           width: 100%;
-          font-family: 'Open Sans', sans-serif;
-          color: darken(#e7e7e7, 40%);
-          display: flex;
-          justify-content: center;
-
-          .description {
-            width: 100%;
-            font-family: 'Open Sans', sans-serif;
-            color: darken(#e7e7e7, 40%);
-            padding: 55px;
-          }
+          @extend %font-family;
+          padding: $fullPx*0.55;
         }
       }
     }
   }
-  .searchProduct{
-    padding-left: 15px;
+}
+
+.searchProduct {
+  padding-left: $fullPx*0.15;
+}
+
+@media screen and (min-width: 992px) {
+  .card {
+    width: $fullPers*0.25;
   }
 }
 
 @media screen and (min-width: 576px) and (max-width: 991px) {
-  .main {
-    width: 100%;
-    margin-top: 15px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    .inp {
-      width: 90%;
-      height: 70px;
-      display: flex;
-      align-items: center;
-      margin-bottom: 20px;
-
-      .searchProduct {
-        width: 100%;
-        height: 25px;
-        border-radius: 50px;
-        outline: none;
-        padding-left: 15px;
-      }
-    }
-
-    .list {
-      display: flex;
-      flex-wrap: wrap;
-      width: 100%;
-      justify-content: space-around;
-    }
-
-    .card {
-      width: 35%;
-      box-shadow: 5px 5px 55px -14px black;
-      border-radius: 4px;
-      padding: 15px;
-      margin: 15px;
-      border: 1px solid;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-
-      .forimg, .forbtn {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-      }
-
-      .img {
-        min-width: 50px;
-        border-radius: 15px;
-        margin-bottom: 15px;
-
-      }
-
-      .button {
-        width: 70px;
-        height: 22px;
-      }
-
-      .name {
-        margin-top: 15px;
-        padding: 5px;
-        border: 1px solid;
-        border-radius: 5px;
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-
-        h4 {
-          margin: 5px;
-        }
-
-        .info {
-          width: 100%;
-          font-family: 'Open Sans', sans-serif;
-          color: darken(#e7e7e7, 40%);
-          display: flex;
-          justify-content: center;
-
-          .description {
-            width: 100%;
-            font-family: 'Open Sans', sans-serif;
-            color: darken(#e7e7e7, 40%);
-            padding: 55px;
-          }
-        }
-      }
-    }
-  }
-  .searchProduct{
-    padding-left: 15px;
+  .card {
+    width: $fullPers*0.35;
   }
 }
 
 @media screen and (max-width: 575px) {
-  .main {
-    width: 100%;
-    margin-top: 15px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    .inp {
-      width: 90%;
-      height: 70px;
-      display: flex;
-      align-items: center;
-      margin-bottom: 20px;
-
-      .searchProduct {
-        width: 100%;
-        height: 25px;
-        border-radius: 50px;
-        outline: none;
-        padding-left: 15px;
-      }
-    }
-
-    .list {
-      display: flex;
-      flex-wrap: wrap;
-      width: 100%;
-      justify-content: space-around;
-    }
-
-    .card {
-      width: 65%;
-      box-shadow: 5px 5px 55px -14px black;
-      border-radius: 4px;
-      padding: 15px;
-      margin: 15px;
-      border: 1px solid;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-
-      .forimg, .forbtn {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-      }
-
-      .img {
-        min-width: 50px;
-        border-radius: 15px;
-        margin-bottom: 15px;
-
-      }
-
-      .button {
-        width: 70px;
-        height: 22px;
-      }
-
-      .name {
-        margin-top: 15px;
-        padding: 5px;
-        border: 1px solid;
-        border-radius: 5px;
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-
-        h4 {
-          margin: 5px;
-        }
-
-        .info {
-          width: 100%;
-          font-family: 'Open Sans', sans-serif;
-          color: darken(#e7e7e7, 40%);
-          display: flex;
-          justify-content: center;
-
-          .description {
-            width: 100%;
-            font-family: 'Open Sans', sans-serif;
-            color: darken(#e7e7e7, 40%);
-            padding: 55px;
-          }
-        }
-      }
-    }
-  }
-  .searchProduct{
-    padding-left: 15px;
+  .card {
+    width: $fullPers*0.65;
   }
 }
-
-
-
 
 
